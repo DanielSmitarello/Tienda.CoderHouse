@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.urls import path
+from electronica.views import pc_notebooks, perifericos, screen, index
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name = 'index'),
+    path('pc_notebooks/', pc_notebooks, name = 'pc_notebooks'),
+    path('perifericos/', perifericos, name = 'perifericos'),
+    path('monitores/', screen, name = 'monitores'),
 ]

@@ -1,8 +1,8 @@
 from django.contrib import admin
-from electronica.models import computadoras, perifericos, monitores
+from electronica.models import Pc_Notebooks, Perifericos, Monitores
 
 # Register your models here.
 
-admin.site.register(computadoras)
-admin.site.register(perifericos)
-admin.site.register(monitores)
+admin.site.register(Pc_Notebooks)
+admin.site.register(Perifericos)
+admin.site.register(Monitores)

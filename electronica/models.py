@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class computadoras(models.Model):
+class Pc_Notebooks(models.Model):
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
     hdmemoria = models.CharField(max_length=30)
@@ -10,16 +10,16 @@ class computadoras(models.Model):
     procesador = models.CharField(max_length=30)
     sistema = models.CharField(max_length=30)
     pantalla = models.CharField(max_length=30)
-    precio = models.IntegerField(max_length=30)
+    precio = models.IntegerField()
 
-class perifericos(models.Model):
+class Perifericos(models.Model):
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
     características = models.CharField(max_length=40)
-    precio = models.IntegerField(max_length=30)
+    precio = models.IntegerField()
 
-class monitores(models.Model):
+class Monitores(models.Model):
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
     pantalla = models.CharField(max_length=30)
-    precio = models.IntegerField(max_length=30)
+    precio = models.IntegerField()
