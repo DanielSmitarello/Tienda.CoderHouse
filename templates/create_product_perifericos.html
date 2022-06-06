@@ -1,0 +1,40 @@
+{% extends 'padre.html' %}
+
+<title>
+	{% block titulopestana %}
+
+    Crear periféricos
+
+	{% endblock %}
+
+</title>
+
+{% block titulo %}
+
+<br>Cargar el nuevo producto en Periféricos...<br>
+
+<form method="POST" action="">
+	{% csrf_token %}
+{% if form_perifericos %}
+<table>
+<br>{{form_perifericos.as_table}}
+</table>
+<br><input type="submit", value="Enviar">
+
+</form>
+
+{% elif nuevo_periferico %}
+
+<div class="card float-left col-12 col-md-5">
+  <img src="https://www.venex.com.ar/products_images/1607014675_m610_8.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Marca: {{nuevo_periferico.marca}}</h5>
+    <p class="card-text">Modelo: {{nuevo_periferico.modelo}}
+                     <br>Características: {{nuevo_periferico.caracteristicas}}<br></p>
+    					 Precio: $ {{nuevo_periferico.precio}}</p>
+  </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'padre.html' %}
+
+<title>
+	{% block titulopestana %}
+
+    Crear pc y notebooks
+
+	{% endblock %}
+
+</title>
+
+{% block titulo %}
+
+<br>Cargar la nueva Pc o Notebook...<br>
+
+<form method="POST" action="">
+	{% csrf_token %}
+{% if form_pcnotebooks %}
+<table>
+<br>{{form_pcnotebooks.as_table}}
+</table>
+<br><input type="submit", value="Enviar">
+
+</form>
+
+{% elif nuevo_pcnotebook %}
+
+<div class="card float-left col-12 col-md-5"><br>
+    <img src="https://www.venex.com.ar/products_images/1637779000_apple-air.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h4 class="card-title">{{nuevo_pcnotebook.marca}}</h4>
+        <p class="card-text"><br>Modelo: {{nuevo_pcnotebook.modelo}}
+                            <br>Hdd: {{nuevo_pcnotebook.hdmemoria}}
+                            <br>RAM: {{nuevo_pcnotebook.memoriaram}}
+                            <br>Procesador: {{nuevo_pcnotebook.procesador}}
+                            <br>Sistema: {{nuevo_pcnotebook.sistema}}
+                            <br>Pantalla: {{nuevo_pcnotebook.pantalla}}
+                            <br>Modelo: {{nuevo_pcnotebook.modelo}}
+                                Precio: ${{nuevo_pcnotebook.precio}}</p>
+        </div>
+  </div>
+{% endif %}
+
+{% endblock %}

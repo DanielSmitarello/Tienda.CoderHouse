@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from django.urls import path
-from electronica.views import pc_notebooks, perifericos, screen, index
+from electronica.views import pc_notebooks, perifericos, screen, index, create_product_monitores, create_product_pcnotebooks, create_product_perifericos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,7 @@ urlpatterns = [
     path('pc_notebooks/', pc_notebooks, name = 'pc_notebooks'),
     path('perifericos/', perifericos, name = 'perifericos'),
     path('monitores/', screen, name = 'monitores'),
+    path('create_product_monitores/', create_product_monitores, name = 'create_product_monitores'),
+    path('create_product_pcnotebooks/', create_product_pcnotebooks, name = 'create_product_pcnotebooks'),
+    path('create_product_perifericos/', create_product_perifericos, name = 'create_product_perifericos'),
 ]

@@ -1,0 +1,40 @@
+{% extends 'padre.html' %}
+
+<title>
+	{% block titulopestana %}
+
+    Crear producto monitores
+
+	{% endblock %}
+
+</title>
+
+{% block titulo %}
+
+Contenido para crear producto monitores
+
+<form method="POST" action="">
+	{% csrf_token %}
+{% if form_monitores %}
+<table>
+<br>{{form_monitores.as_table}}
+</table>
+<br><input type="submit", value="Enviar">
+
+</form>
+
+{% elif nuevo_monitor %}
+
+<div class="card float-left col-12 col-md-5"><br>
+    <img src="https://www.venex.com.ar/products_images/1630934516_dsgfsdf.png" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h4 class="card-title">Marca: {{nuevo_monitor.marca}}</h4>
+        <p class="card-text"><br>Modelo: {{nuevo_monitor.modelo}}
+                            <br>Pantalla: {{nuevo_monitor.pantalla}}
+                            <br>Características: {{nuevo_monitor.modelo}}
+                            <br>Precio: ${{nuevo_monitor.precio}}</p>
+        </div>
+  </div>
+{% endif %}
+
+{% endblock %}
