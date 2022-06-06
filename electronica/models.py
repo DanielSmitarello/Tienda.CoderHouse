@@ -12,14 +12,24 @@ class Pc_Notebooks(models.Model):
     pantalla = models.CharField(max_length=30)
     precio = models.IntegerField()
 
+    def __str__(self):
+        return f'Marca: {self.marca} Modelo: {self.modelo} Precio: $ {self.precio}'
+
 class Perifericos(models.Model):
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
-    características = models.CharField(max_length=40)
+    caracteristicas = models.CharField(max_length=60)
     precio = models.IntegerField()
+
+    def __str__(self):
+        return f'Marca: {self.marca} Modelo: {self.modelo} Precio: $ {self.precio}'
 
 class Monitores(models.Model):
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
     pantalla = models.CharField(max_length=30)
+    caracteristicas = models.CharField(max_length=200, null=True)
     precio = models.IntegerField()
+
+    def __str__(self):
+        return f'Marca: {self.marca} Modelo: {self.modelo} Pantalla: {self.pantalla} Precio: $ {self.precio}'

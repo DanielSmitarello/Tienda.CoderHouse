@@ -1,7 +1,29 @@
 {% extends 'padre.html' %}
 
+<title>
+	{% block titulopestana %}
+    Pc y Notebooks
+	{% endblock %}
+</title>
+
 {% block titulo %}
+<br>
+{% for computadora in pc_notebooks %}
 
-Hola en Pc_Notebooks
+  <div class="card float-left col-12 col-md-5"><br>
+    <img src="https://www.venex.com.ar/products_images/1637779000_apple-air.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{computadora.marca}}</h4>
+          <p class="card-text"><br>Modelo: {{computadora.modelo}}
+                               <br>Hdd: {{computadora.hdmemoria}}
+                               <br>RAM: {{computadora.memoriaram}}
+                               <br>Procesador: {{computadora.procesador}}
+                               <br>Sistema: {{computadora.sistema}}
+                               <br>Pantalla: {{computadora.pantalla}}
+                               <br>Modelo: {{computadora.modelo}}</p>
+          <a href="#" class="btn btn-primary">Precio: ${{computadora.precio}}</a>
+        </div>
+  </div>
 
+{% endfor%}
 {% endblock %}

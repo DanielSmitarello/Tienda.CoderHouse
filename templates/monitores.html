@@ -7,7 +7,19 @@
 </title>
 
 {% block titulo %}
+<br>
+{% for monitor in monitorespc %}
+<div class="card float-left col-12 col-md-5">
+  <img src="https://www.venex.com.ar/products_images/1630934516_dsgfsdf.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">Marca: {{monitor.marca}}</h4>
+    <p class="card-text">Modelo: {{monitor.modelo}}
+                     <br>Pantalla: {{monitor.pantalla}}
+                     <br>Características: {{monitor.caracteristicas}}<br></p>
+    <a href="#" class="btn btn-primary">Precio: $ {{monitor.precio}}</a>
+  </div>
+</div>
 
-<br><br>Hola en Monitores
+{% endfor%}
 
 {% endblock %}

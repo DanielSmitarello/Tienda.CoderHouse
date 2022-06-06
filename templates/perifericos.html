@@ -1,7 +1,24 @@
 {% extends 'padre.html' %}
 
-{% block titulo %}
+<title>
+	{% block titulopestana %}
+    Periféricos
+	{% endblock %}
+</title>
 
-Hola en Perifecos...
+{% block titulo %}
+Hola
+<br>
+{% for impresora in impresoras %}
+<div class="card float-left col-12 col-md-5">
+  <img src="https://www.venex.com.ar/products_images/1607014675_m610_8.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Marca: {{impresora.marca}}</h5>
+    <p class="card-text">Modelo: {{impresora.modelo}}
+                     <br>Características: {{impresora.caracteristicas}}<br></p>
+    <a href="#" class="btn btn-primary">Precio: $ {{impresora.precio}}</a>
+  </div>
+</div>
+{% endfor %}
 
 {% endblock %}
