@@ -1,0 +1,63 @@
+{% extends 'padre.html' %}
+
+<title>
+	{% block titulopestana %}
+    Búsqueda
+	{% endblock %}
+</title>
+
+{% block titulo %}
+<br>Resultado de la busqueda...</br>
+
+
+{% for search in busqueda_producto %}
+
+<div class="card float-left col-12 col-md-5"><br>
+    <img src="https://www.venex.com.ar/products_images/1630934516_dsgfsdf.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{search.marca}}</h4><br>
+                                 Modelo:{{search.modelo}}<br>
+                                 Pantalla:{{search.pantalla}}<br>
+                                 <br>Características:{{search.caracteristicas}}<br>
+          <br><a href="#" class="btn btn-primary">Precio: ${{search.precio}}</a>
+        </div>
+  </div>
+
+{% endfor %}
+<br>Resultado de la busqueda...</br>
+
+
+{% for search2 in busqueda_producto2 %}
+
+<div class="card float-left col-12 col-md-5"><br>
+    <img src="https://www.venex.com.ar/products_images/1630934516_dsgfsdf.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{search2.marca}}</h4><br>
+                                 Modelo:{{search2.modelo}}<br>
+                                 <br>Características:{{search2.caracteristicas}}<br>
+          <br><a href="#" class="btn btn-primary">Precio: ${{search2.precio}}</a>
+        </div>
+  </div>
+
+{% endfor %}
+
+<br>Resultado de la busqueda...</br>
+
+
+{% for search3 in busqueda_producto2 %}
+
+<div class="card float-left col-12 col-md-5"><br>
+    <img src="https://www.venex.com.ar/products_images/1630934516_dsgfsdf.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{search3.marca}}</h4><br>
+                                 Modelo:{{search3.modelo}}<br>
+                                    Memoria:{{search3.memoriaram}}
+                                    Pantalla:{{search3.pantalla}}<br>
+                                 <br>Características:{{search3.caracteristicas}}<br>
+          <br><a href="#" class="btn btn-primary">Precio: ${{search3.precio}}</a>
+        </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

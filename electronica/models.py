@@ -31,6 +31,5 @@ class Monitores(models.Model):
     caracteristicas = models.CharField(max_length=200, null=True)
     precio = models.IntegerField()
 
-
     def __str__(self):
         return f'Marca: {self.marca} Modelo: {self.modelo} Pantalla: {self.pantalla} Precio: $ {self.precio}'
