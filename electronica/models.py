@@ -15,6 +15,10 @@ class Pc_Notebooks(models.Model):
     def __str__(self):
         return f'Marca: {self.marca} Modelo: {self.modelo} Precio: $ {self.precio}'
 
+    class Meta:
+        verbose_name = 'pc_notebook'
+        verbose_name_plural = 'pc_notebooks'
+
 class Perifericos(models.Model):
     marca = models.CharField(max_length=30)
     modelo = models.CharField(max_length=30)
@@ -23,6 +27,10 @@ class Perifericos(models.Model):
 
     def __str__(self):
         return f'Marca: {self.marca} Modelo: {self.modelo} Precio: $ {self.precio}'
+
+    class Meta:
+        verbose_name = 'periferico'
+        verbose_name_plural = 'perifericos'
 
 class Monitores(models.Model):
     marca = models.CharField(max_length=30)
@@ -33,3 +41,7 @@ class Monitores(models.Model):
 
     def __str__(self):
         return f'Marca: {self.marca} Modelo: {self.modelo} Pantalla: {self.pantalla} Precio: $ {self.precio}'
+
+    class Meta:
+        verbose_name = 'monitor'
+        verbose_name_plural = 'monitores'
