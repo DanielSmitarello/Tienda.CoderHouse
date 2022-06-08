@@ -24,8 +24,6 @@
   </div>
 
 {% endfor %}
-<br>Resultado de la busqueda...</br>
-
 
 {% for search2 in busqueda_producto2 %}
 
@@ -41,18 +39,14 @@
 
 {% endfor %}
 
-<br>Resultado de la busqueda...</br>
-
-
-{% for search3 in busqueda_producto2 %}
+{% for search3 in busqueda_producto3 %}
 
 <div class="card float-left col-12 col-md-5"><br>
     <img src="https://www.venex.com.ar/products_images/1630934516_dsgfsdf.png" class="card-img-top" alt="...">
         <div class="card-body">
           <h4 class="card-title">{{search3.marca}}</h4><br>
                                  Modelo:{{search3.modelo}}<br>
-                                    Memoria:{{search3.memoriaram}}
-                                    Pantalla:{{search3.pantalla}}<br>
+                                 Pantalla:{{search3.pantalla}}<br>
                                  <br>Características:{{search3.caracteristicas}}<br>
           <br><a href="#" class="btn btn-primary">Precio: ${{search3.precio}}</a>
         </div>

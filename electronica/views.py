@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-import electronica
+# from django.http import HttpResponse
+# from electronica import models
+# import electronica
 from electronica.models import Pc_Notebooks, Perifericos, Monitores
 from electronica.forms import Create_Perifericos_form, Create_Pcnotebooks_form, Create_Monitores_form
-from electronica import models
+
 
 # Create your views here.
 
@@ -105,12 +105,12 @@ def create_product_perifericos(request):
 def search_product(request):
     print(request.GET)
     # busqueda_producto = Monitores.objects.get() #hace busqueda de un solo objeto que es único... ejemplo por el código.
-    busqueda_producto = Monitores.objects.filter(marca = request.GET['search'])
-    busqueda_producto2 = Perifericos.objects.filter(marca=request.GET['search'])
-    busqueda_producto3 = Pc_Notebooks.objects.filter(marca=request.GET['search'])
+    busqueda_producto = Monitores.objects.filter(marca__icontains=request.GET['search'])
+    busqueda_producto2 = Perifericos.objects.filter(marca__icontains=request.GET['search'])
+    busqueda_producto3 = Pc_Notebooks.objects.filter(marca__icontains=request.GET['search'])
     context = {
         'busqueda_producto':busqueda_producto,
-        'busqueda_producto2':busqueda_producto2,
-        'busqueda_producto3':busqueda_producto3,
+        'busqueda_producto2': busqueda_producto2,
+        'busqueda_producto3': busqueda_producto3,
     }
     return render(request, 'search_product.html', context=context)
